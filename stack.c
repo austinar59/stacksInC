@@ -57,3 +57,17 @@ bool isEmpty(Stack* s) {
         return true;
     return false;
 }
+void printPop(Stack* s) {
+    if(!isEmpty(s))
+        printf("%d\n", pop(s));
+    else printf("Empty stack.\n");
+}
+
+//deletes members array and then deletes s before returning NULL, with the
+// intent that s be assigned to this
+Stack* destroyStack(Stack* s) {
+    free(s->members);
+    s->members = NULL;
+    free(s);
+    return NULL;
+}

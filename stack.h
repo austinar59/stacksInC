@@ -15,4 +15,6 @@
         int getSize(Stack*);
         int getCapacity(Stack*);
         bool isEmpty(Stack*);
+        void printPop(Stack*);
+        Stack* destroyStack(Stack*);
 #endif
