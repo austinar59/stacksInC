@@ -44,12 +44,13 @@ int peek(Stack* s) {
     if(!isEmpty(s)) {
         return s->members[s->top];
     }
+    return -1;
 }
 int getSize(Stack* s) {
     return s->top + 1;
 }
 int getCapacity(Stack* s) {
-    return s->capacity
+    return s->capacity;
 }
 bool isEmpty(Stack* s) {
     if(getSize(s) <= 0)
