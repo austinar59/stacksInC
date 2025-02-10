@@ -9,7 +9,7 @@
             int capacity;
         } Stack;
         Stack* createStack(Stack*, int);
-        void push(Stack*, int);
+        int push(Stack*, int);
         int pop(Stack*);
         int peek(Stack*);
         int getSize(Stack*);

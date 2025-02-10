@@ -22,13 +22,23 @@ Stack* createStack(Stack* s, int capacity) {
 }
 
 //push function
-void push(Stack* s, int i) {
+int push(Stack* s, int i) {
     // checks to see that top can hold more; since getSize returns last index + 1
     // we only need to check that the size is less than the capacity
     if(getSize(s) < s->capacity) {
         //pushes member to index above top then increments
         s->members[s->top + 1] = i;
         s->top += 1;
+        return 1;
+    } else {
+        int* members = (int*) realloc(s->members, (s->capacity + 1) * sizeof(Stack));
+        if(members == NULL) {
+            return 0;
+        }
+        s->members = members;
+        s->capacity++;
+        s->members[s->top + 1] = i;
+        return 1;
     }
 }
 int pop(Stack* s) {

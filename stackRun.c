@@ -7,6 +7,10 @@ int main() {
         return -1;
     push(p, 9);
     push(p, 7);
+    int q;
+    for(q = 0; q < 17; q++) {
+        push(p, q);
+    }
     int i;
     for(i = 0; i < p->capacity; i++)
         printPop(p);
