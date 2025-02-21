@@ -31,7 +31,7 @@ int push(Stack* s, int i) {
         s->top += 1;
         return 1;
     } else {
-        int* members = (int*) realloc(s->members, (s->capacity + 1) * sizeof(Stack));
+        int* members = (int*) realloc(s->members, (s->capacity + 1) * sizeof(int));
         if(members == NULL) {
             return 0;
         }
